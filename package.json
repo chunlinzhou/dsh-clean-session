@@ -4,6 +4,11 @@
   "description": "Permanently delete sessions from disk, cache, and UI for DeepSeek Harness.",
   "type": "module",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "install-plugin": "node scripts/install.mjs",
+    "uninstall-plugin": "node scripts/uninstall.mjs"
+  },
   "exports": {
     ".": {
       "default": "./lib/index.js"
