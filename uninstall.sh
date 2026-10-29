@@ -6,7 +6,7 @@
 set -euo pipefail
 
 TARGET_PROFILE="${HOME}/.dsh/profiles/desktop"
-PLUGIN_NAME="dsh-plugin-session-cleaner"
+PLUGIN_NAME="dsh-clean-session"
 
 echo "=========================================================="
 echo "   卸载 DeepSeek Harness 彻底删除会话插件"

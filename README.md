@@ -1,4 +1,4 @@
-# DeepSeek Harness Session Cleaner Plugin (`dsh-plugin-session-cleaner`)
+# DeepSeek Harness Session Cleaner Plugin (`dsh-clean-session`)
 
 [中文说明](#中文说明) | [English Documentation](#english-documentation)
 
@@ -13,7 +13,7 @@
 - 归档仅仅是将 `sessionId` 添加至 `~/.dsh/storages/workspace.json` 中的 `archivedSessionIds` 列表，并通过前端过滤器隐藏。切换“显示已归档”后，会话依然存在。
 - 磁盘上的核心会话数据（`~/.dsh/sessions/<workspace>/session-<id>/`，包含 `session.v4.jsonl.zstd`、执行历史等）以及投影缓存（`~/.dsh/storages/session_projcache/sessions/<id>.json`）**永远不会被删除**，不仅持续占用磁盘空间，更存在敏感代码和上下文无法销毁的隐私泄露风险。
 
-**`dsh-plugin-session-cleaner`** 是专为 DeepSeek Harness 设计的原生增强插件，赋予系统**彻底物理删除会话**的能力。
+**`dsh-clean-session`** 是专为 DeepSeek Harness 设计的原生增强插件，赋予系统**彻底物理删除会话**的能力。
 
 ---
 
@@ -53,19 +53,19 @@
 
 1. 将本仓库目录链接或复制到 DSH 桌面配置目录下：
    ```bash
-   ln -s "$(pwd)" "${HOME}/.dsh/profiles/desktop/node_modules/dsh-plugin-session-cleaner"
+   ln -s "$(pwd)" "${HOME}/.dsh/profiles/desktop/node_modules/dsh-clean-session"
    ```
 2. 编辑 `~/.dsh/profiles/desktop/package.json`，在 `dependencies` 和 `dsh.profile.bundles` 中添加本插件：
    ```json
    {
      "dependencies": {
-       "dsh-plugin-session-cleaner": "1.0.0"
+       "dsh-clean-session": "1.0.0"
      },
      "dsh": {
        "profile": {
          "bundles": [
            "...",
-           "dsh-plugin-session-cleaner"
+           "dsh-clean-session"
          ]
        }
      }
@@ -116,7 +116,7 @@ In vanilla **DeepSeek Harness (DSH)**:
 - Archiving merely adds the session ID into `archivedSessionIds` in `~/.dsh/storages/workspace.json` and hides it using UI filter rules. Switching the filter to "Show Archived" reveals the session again.
 - The physical session records on disk (`~/.dsh/sessions/<workspace>/session-<id>/`, containing `session.v4.jsonl.zstd`, locks, execution logs) and projection caches (`~/.dsh/storages/session_projcache/sessions/<id>.json`) **are never deleted**. This leads to unnecessary disk usage and potential privacy/data leak risks for sensitive code and instructions.
 
-**`dsh-plugin-session-cleaner`** is an official-standard plugin for DeepSeek Harness that provides the capability to **permanently delete and physically purge sessions**.
+**`dsh-clean-session`** is an official-standard plugin for DeepSeek Harness that provides the capability to **permanently delete and physically purge sessions**.
 
 ---
 
@@ -156,19 +156,19 @@ After installation, **completely quit and relaunch DeepSeek Harness**.
 
 1. Link or copy this directory into the DSH profile:
    ```bash
-   ln -s "$(pwd)" "${HOME}/.dsh/profiles/desktop/node_modules/dsh-plugin-session-cleaner"
+   ln -s "$(pwd)" "${HOME}/.dsh/profiles/desktop/node_modules/dsh-clean-session"
    ```
 2. Update `~/.dsh/profiles/desktop/package.json`:
    ```json
    {
      "dependencies": {
-       "dsh-plugin-session-cleaner": "1.0.0"
+       "dsh-clean-session": "1.0.0"
      },
      "dsh": {
        "profile": {
          "bundles": [
            "...",
-           "dsh-plugin-session-cleaner"
+           "dsh-clean-session"
          ]
        }
      }

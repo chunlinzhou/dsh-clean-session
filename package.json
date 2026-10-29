@@ -1,5 +1,5 @@
 {
-  "name": "dsh-plugin-session-cleaner",
+  "name": "dsh-clean-session",
   "version": "1.0.0",
   "description": "Permanently delete sessions from disk, cache, and UI for DeepSeek Harness.",
   "type": "module",

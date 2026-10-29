@@ -1,5 +1,5 @@
-# dsh-plugin-session-cleaner cordis bundle patch
+# dsh-clean-session cordis bundle patch
 # 挂载服务端 Host 插件
 - insert:
-    - id: session-cleaner
-      name: "dsh-plugin-session-cleaner"
+    - id: dsh-clean-session
+      name: "dsh-clean-session"
